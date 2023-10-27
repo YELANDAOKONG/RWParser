@@ -16,10 +16,11 @@ public class Lexer
     {
         List<Token> list = new List<Token>();
 
-        string cache = "";
+        string cache = ""; 
         foreach (var charNow in input)
         {
-            foreach (var weight in Rule.GetWeightList())
+            foreach (var weight in Rule.GetWeightList().OrderBy(kvp => kvp.Key)
+                         .ToDictionary(kvp => kvp.Key, kvp => kvp.Value))
             {
                 int rid = weight.Value;
                 string name = Rule.GetNameList()[rid];

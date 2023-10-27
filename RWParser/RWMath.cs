@@ -12,6 +12,7 @@ public class RWMath : IRWRule
         {
             { 1, "new_line"},
             { 99999, "string"},
+            { -99999999, "unknow"},
         };
     }
     
@@ -21,6 +22,7 @@ public class RWMath : IRWRule
         {
             { 1, new Regex("^[\n|\r]$")},
             { 99999, new Regex("^\".*\"$")},
+            { -99999999, new Regex("^.*$")},
         };
     }
     
@@ -28,8 +30,9 @@ public class RWMath : IRWRule
         return new Dictionary<int, int>()
         {
             
-            { 1, 1},
-            { 99999, 99999},
+            { 1, 1 },
+            { 99999, 99999 },
+            // { 9999999, -99999999 },
         };
     }
     

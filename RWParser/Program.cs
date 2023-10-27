@@ -12,7 +12,9 @@ Console.WriteLine(new Regex("^\".*\"$").Match("asd\""));
 Console.WriteLine(new Regex("^\".*\"$").Match("\"asd\\\"wdfd\""));
 
 
-string code = "\"Hi\"\n\"wdf\\\"wdf\"-;";
+string code = "\"Hi\"\n\"wdf\\\"wdf\"-;\"";
+
+
 
 Lexer lexer = new Lexer(new RWMath());
 List<Token> tokens = lexer.GetTokenList(code);
